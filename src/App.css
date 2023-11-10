@@ -2,37 +2,113 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid {
+  display: grid;
+  gap: 3.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid-three-column {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.SearchBar{
+  background-color: rgb(168, 163, 163);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  height: 50px;
+}
+
+.body{
+  padding-top: 60px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.modal img {
+  max-width: 100%;
+  max-height: 90vh;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  height: 50px;
+  margin: 10px;
+}
+
+.Photo {
+  margin: 10px;
+}
+
+.suggestions {
+  background-color: white;
+  visibility: hidden;
+  /* display: inline-block; */
+}
+
+.loading-container {
+  width: 100%;
+  text-align: center;
+  margin: 2rem auto;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid rgb(63, 219, 144);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
   }
 }
